@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/fresh/!svn/ver/7909/2014_2/exam/branches/2014_5_15/src/main/resources/spring
+END
+accessFilter.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/fresh/!svn/ver/7909/2014_2/exam/branches/2014_5_15/src/main/resources/spring/accessFilter.xml
+END
+service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/fresh/!svn/ver/7909/2014_2/exam/branches/2014_5_15/src/main/resources/spring/service.xml
+END
+controllerResult.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/fresh/!svn/ver/7909/2014_2/exam/branches/2014_5_15/src/main/resources/spring/controllerResult.xml
+END
+mail.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/fresh/!svn/ver/7909/2014_2/exam/branches/2014_5_15/src/main/resources/spring/mail.xml
+END
+spring.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/fresh/!svn/ver/7909/2014_2/exam/branches/2014_5_15/src/main/resources/spring/spring.xml
+END
+task.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/fresh/!svn/ver/7909/2014_2/exam/branches/2014_5_15/src/main/resources/spring/task.xml
+END
+dao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/fresh/!svn/ver/7909/2014_2/exam/branches/2014_5_15/src/main/resources/spring/dao.xml
+END

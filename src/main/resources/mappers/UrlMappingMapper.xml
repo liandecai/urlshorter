@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="liande.cai.urlshorter.dao.URLMappingDao">
+
+	<insert id="insert" parameterType="liande.cai.urlshorter.model.URLInfo" keyProperty="id">
+		insert into short_url_mapping (long_url)
+		values
+		(#{longUrl})
+	</insert>
+	
+	<select id="query" parameterType="map" resultType="liande.cai.urlshorter.model.URLInfo">
+		select id, long_url as longUrl
+		from  short_url_mapping
+		<where>
+			<if test="id != 0 and id != null">
+         	 id = #{id}
+      		</if>
+      		<if test="longUrl != null and longUrl != ''">
+      			and long_url = #{longUrl}
+      		</if>
+		</where>
+	</select>
+</mapper>

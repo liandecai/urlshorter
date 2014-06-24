@@ -1,0 +1,121 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:map id="touchCourseControllerReturn">
+        <entry key="json" value-ref="touchCourseControllerJsonMap"></entry>
+        <entry key="modelAndView" value-ref="touchCourseControllerModelAndViewMap"></entry>
+    </util:map>
+    <util:map id="touchCourseControllerJsonMap" key-type="java.lang.Integer">
+        <entry key="1" value-ref="touchCourseControllerReturnJson1"></entry>
+        <entry key="0" value-ref="touchCourseControllerReturnJson0"></entry>
+        <entry key="-1" value-ref="touchCourseControllerReturnJsonN1"></entry>
+        <entry key="-2" value-ref="touchCourseControllerReturnJsonN2"></entry>
+    </util:map>
+    <bean id="touchCourseControllerReturnJson1" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="true"></property>
+        <property name="data" value="创建课程成功"></property>
+    </bean>
+    <bean id="touchCourseControllerReturnJson0" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="errmsg" value="创建课程失败，对分类没有权限"></property>
+    </bean>
+    <bean id="touchCourseControllerReturnJsonN1" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="errmsg" value="创建课程失败，该分类下有同名课程"></property>
+    </bean>
+    <bean id="touchCourseControllerReturnJsonN2" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="errmsg" value="系统繁忙，请稍候再试"></property>
+    </bean>
+    <util:map id="touchCourseControllerModelAndViewMap">
+        <entry key="1" value-ref="touchCourseControllerReturnModelAndView1"></entry>
+    </util:map>
+    <bean id="touchCourseControllerReturnModelAndView1" class="org.springframework.web.servlet.ModelAndView">
+        <constructor-arg index="0" value="touchCourse1"></constructor-arg>
+        <constructor-arg index="1" ref="touchCourseControllerReturnModelAndView1MapMember"></constructor-arg>
+    </bean>
+    <util:map id="touchCourseControllerReturnModelAndView1MapMember">
+        <entry key="msg1" value="创建课程成功!"></entry>
+    </util:map>
+
+    <util:map id="modifyCourseControllerReturn" key-type="java.lang.Integer"
+              value-type="com.qunar.exam.common.JsonResult">
+        <entry key="1" value-ref="modifyCourseControllerReturn1"></entry>
+        <entry key="0" value-ref="modifyCourseControllerReturn0"></entry>
+        <entry key="-1" value-ref="modifyCourseControllerReturnN1"></entry>
+        <entry key="-2" value-ref="modifyCourseControllerReturnN2"></entry>
+    </util:map>
+    <bean id="modifyCourseControllerReturn1" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="true"></property>
+        <property name="data" value="修改课程成功"></property>
+    </bean>
+    <bean id="modifyCourseControllerReturn0" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="对修改的categoryId没有权限"></property>
+    </bean>
+    <bean id="modifyCourseControllerReturnN1" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="该分类下有同名课程，课程名冲突"></property>
+    </bean>
+    <bean id="modifyCourseControllerReturnN2" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="mybatis或数据库底层异常"></property>
+    </bean>
+
+    <util:map id="dropCourseControllerReturn" key-type="java.lang.Integer" value-type="com.qunar.exam.common.JsonResult">
+        <entry key="1" value-ref="dropCourseControllerReturn1"></entry>
+        <entry key="0" value-ref="dropCourseControllerReturn0"></entry>
+        <entry key="-1" value-ref="dropCourseControllerReturnN1"></entry>
+        <entry key="-2" value-ref="dropCourseControllerReturnN2"></entry>
+        <entry key="-3" value-ref="dropCourseControllerReturnN3"></entry>
+    </util:map>
+    <bean id="dropCourseControllerReturn1" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="true"></property>
+        <property name="data" value="删除成功"></property>
+    </bean>
+    <bean id="dropCourseControllerReturn0" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="没有权限"></property>
+    </bean>
+    <bean id="dropCourseControllerReturnN1" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="不存在课程"></property>
+    </bean>
+    <bean id="dropCourseControllerReturnN2" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="课程有依赖的留言，不能删除"></property>
+    </bean>
+    <bean id="dropCourseControllerReturnN3" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="删除课程{}失败，生成过考试"></property>
+    </bean>
+    <bean id="dropCourseControllerReturnN4" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="mybatis或数据库底层异常"></property>
+    </bean>
+
+    <util:map id="cancelCourseControllerReturn" key-type="java.lang.Integer" value-type="com.qunar.exam.common.JsonResult">
+        <entry key="1" value-ref="cancelCourseControllerReturn1"></entry>
+        <entry key="0" value-ref="cancelCourseControllerReturn0"></entry>
+        <entry key="-1" value-ref="cancelCourseControllerReturnN1"></entry>
+        <entry key="-2" value-ref="cancelCourseControllerReturnN2"></entry>
+    </util:map>
+    <bean id="cancelCourseControllerReturn1" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="true"></property>
+        <property name="data" value="下线课程成功"></property>
+    </bean>
+    <bean id="cancelCourseControllerReturn0" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="没有这门课程"></property>
+    </bean>
+    <bean id="cancelCourseControllerReturnN1" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="没有权限"></property>
+    </bean>
+    <bean id="cancelCourseControllerReturnN2" class="com.qunar.exam.common.JsonResult">
+        <property name="ret" value="false"></property>
+        <property name="data" value="mybatis或数据库底层异常"></property>
+    </bean>
+</beans>

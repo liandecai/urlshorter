@@ -1,4 +1,4 @@
 该工程使用spring 
 
-其中get.do?www.baidu.com代表把一个网址变成一个短网址
+其中get.do?www.baidu.com  可以把一个网址变成一个短网址
 获得短网址之后只需在本站输入短网址即可跳转到对应网页
